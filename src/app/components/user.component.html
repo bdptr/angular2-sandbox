@@ -1,0 +1,54 @@
+<form>
+    <label>Name:</label>
+    <input type="text" name="name" [(ngModel)]="newUser.name" />
+    <br />
+    
+    <label>Gender:</label>
+    <input type="text" name="gender" [(ngModel)]="newUser.gender" />
+    <br />
+    
+    <label>Age:</label>
+    <input type="number" name="age" [(ngModel)]="newUser.age" />
+    <br />
+
+    <button (click)="addUser(newUser)">Add user</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let user of users; let i = index'>
+            <td>{{user.name}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.age}}</td>
+            <td><button (click)="deleteUser(i)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr />
+
+<table>
+    <thead>
+        <tr>
+            <th>userId</th>
+            <th>id</th>
+            <th>title</th>
+            <th>body</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts; let i = index;">
+            <td>{{post.userId}}</td>
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+        </tr>
+    </tbody>
+</table>
